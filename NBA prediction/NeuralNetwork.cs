@@ -35,7 +35,6 @@ namespace NbaBetting
             deltaOut = new double[outputCount];
             deltaHidden = new double[hiddenCount];
 
-            // Small random starting weights (Xavier/Glorot uniform range)
             Random rng = new Random(seed);
             double r1 = Math.Sqrt(6.0 / (inputCount + hiddenCount));
             double r2 = Math.Sqrt(6.0 / (hiddenCount + outputCount));
