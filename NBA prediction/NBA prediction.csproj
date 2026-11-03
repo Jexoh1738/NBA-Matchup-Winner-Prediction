@@ -61,8 +61,10 @@
     <Compile Include="MatchPredictor.cs" />
     <Compile Include="NbaBettingData.cs" />
     <Compile Include="NeuralNetwork.cs" />
+    <Compile Include="PredictionTabBinder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamInfo.cs" />
     <Compile Include="TrainingPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

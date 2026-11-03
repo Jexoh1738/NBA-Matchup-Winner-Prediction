@@ -162,6 +162,7 @@ namespace NbaBetting
                 if (!col.ContainsKey(name))
                     throw new InvalidDataException("Column '" + name + "' not found. CSV header is: " + string.Join(", ", header));
 
+            UnknownTeamNames.Clear();
             List<Game> games = new List<Game>();
             int skipped = 0;
             for (int ln = 1; ln < lines.Length; ln++)
@@ -197,6 +198,8 @@ namespace NbaBetting
                 a.Add(g.Date, !g.HomeWon, false, -g.Margin);
             }
             log(string.Format("Teams found: {0}", teams.Count));
+            if (UnknownTeamNames.Count > 0)
+                log("Team names not recognised (kept exactly as written): " + string.Join(", ", UnknownTeamNames.OrderBy(s => s)));
 
             int nTrain = (int)(rows.Count * trainFrac);
             int nVal = (int)(rows.Count * valFrac);
@@ -252,8 +255,8 @@ namespace NbaBetting
             if (!double.TryParse(get("score_away"), NumberStyles.Float, inv, out scoreAway)) return null;
             if (scoreHome == scoreAway) return null;
 
-            string home = get("home");
-            string away = get("away");
+            string home = CanonicalTeam(get("home"));
+            string away = CanonicalTeam(get("away"));
             if (home.Length == 0 || away.Length == 0) return null;
 
             string fav = get("whos_favored").ToLowerInvariant();
@@ -267,6 +270,19 @@ namespace NbaBetting
             g.Margin = scoreHome - scoreAway;
             g.HomeFavored = fav == "home";
             return g;
+        }
+
+        // Names in the CSV that TeamInfo could not match (reported in the training log).
+        private static readonly HashSet<string> UnknownTeamNames = new HashSet<string>();
+
+        /// <summary>Turns "bos", "GS", "New Jersey Nets", ... into the current full team name.</summary>
+        private static string CanonicalTeam(string raw)
+        {
+            if (string.IsNullOrEmpty(raw)) return "";
+            TeamInfo info = TeamInfo.Lookup(raw);
+            if (info != null) return info.FullName;
+            UnknownTeamNames.Add(raw);
+            return raw;
         }
 
         private static Dataset Build(List<Row> rows, double[] min, double[] max)

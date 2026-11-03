@@ -15,6 +15,7 @@ namespace NbaBetting
     public sealed class PredictionResult
     {
         public string Home, Away;
+        public string HomeAbbrev, AwayAbbrev;            // short codes for small labels, e.g. "BOS"
         public double HomeWinProb, AwayWinProb;          // 0..1, add up to 1
         public char[] HomeLast10, AwayLast10;            // 'W', 'L' or '-' (no game yet), oldest -> newest
         public double HomeAtHomeRate, AwayOnRoadRate;    // win rate at home / on the road (last 20 such games)
@@ -51,6 +52,25 @@ namespace NbaBetting
             get { return teams.Keys.OrderBy(k => k, StringComparer.OrdinalIgnoreCase).ToList(); }
         }
 
+        /// <summary>Teams of one conference ("East" or "West"), sorted by name.</summary>
+        public List<string> TeamsIn(string conference)
+        {
+            List<string> list = new List<string>();
+            foreach (string name in teams.Keys)
+            {
+                TeamInfo info = TeamInfo.Lookup(name);
+                if (info != null && info.Conference == conference) list.Add(name);
+            }
+            list.Sort(StringComparer.OrdinalIgnoreCase);
+            return list;
+        }
+
+        public static string AbbrevOf(string teamName)
+        {
+            TeamInfo info = TeamInfo.Lookup(teamName);
+            return info != null ? info.Abbrev : teamName;
+        }
+
         public PredictionResult Predict(string home, string away)
         {
             TeamState h, a;
@@ -67,6 +87,8 @@ namespace NbaBetting
             PredictionResult r = new PredictionResult();
             r.Home = home;
             r.Away = away;
+            r.HomeAbbrev = AbbrevOf(home);
+            r.AwayAbbrev = AbbrevOf(away);
             r.HomeWinProb = pHome;
             r.AwayWinProb = 1 - pHome;
             r.HomeLast10 = LastTen(h.Results);
