@@ -1,22 +1,19 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
 namespace CodingBackProp
 {
-    /// <summary>
-    /// Cleans nba_2008-2026.csv:
-    ///   - reads the original file (it is never changed)
-    ///   - removes rows that cannot be used
-    ///   - saves the good rows into a new "clean" file
-    ///   - prints a report you can copy into your write-up
-    /// </summary>
     public static class NbaDataCleaner
     {
-        public static void CleanFile(string originalFilePath, string cleanFilePath)
+        public static void CleanFile(string originalFilePath, string cleanFilePath, Action<string> log = null)
         {
+            Action<string> say = log ?? Console.WriteLine;
+
             string[] allLines = File.ReadAllLines(originalFilePath);
+            if (allLines.Length < 2) throw new Exception("The CSV file is empty: " + originalFilePath);
+
             string headerLine = allLines[0];
             string[] headerNames = headerLine.Split(',');
 
@@ -30,9 +27,13 @@ namespace CodingBackProp
             int colSpread = FindColumn(headerNames, "spread");
             int colTotal = FindColumn(headerNames, "total");
 
+            int highestColumnNeeded = Math.Max(Math.Max(Math.Max(colDate, colAway), Math.Max(colHome, colScoreAway)),
+                Math.Max(Math.Max(colScoreHome, colWhosFavored), Math.Max(colSpread, colTotal)));
+
             // Counters for the report
             int numRowsAtStart = allLines.Length - 1;
             int numBlankLines = 0;
+            int numShortRows = 0;
             int numMissingScore = 0;
             int numMissingSpread = 0;
             int numMissingTotal = 0;
@@ -55,6 +56,13 @@ namespace CodingBackProp
                 }
 
                 string[] parts = currentLine.Split(',');
+
+                // Problem: row has fewer columns than we need
+                if (parts.Length <= highestColumnNeeded)
+                {
+                    ++numShortRows;
+                    continue;
+                }
 
                 // Problem: final score missing or not a number
                 double scoreAway, scoreHome;
@@ -113,26 +121,28 @@ namespace CodingBackProp
             linesToSave.AddRange(goodLines);
             File.WriteAllLines(cleanFilePath, linesToSave);
 
-            // Print the cleaning report
+            // Report
             int numRemoved = numRowsAtStart - goodLines.Count;
-            Console.WriteLine("==============================================");
-            Console.WriteLine("  DATA CLEANING REPORT");
-            Console.WriteLine("==============================================");
-            Console.WriteLine("  Games in original file:  " + numRowsAtStart.ToString("N0"));
-            Console.WriteLine();
-            Console.WriteLine("  Problem                      Rows removed");
-            Console.WriteLine("  Empty line                   " + numBlankLines);
-            Console.WriteLine("  Missing final score          " + numMissingScore);
-            Console.WriteLine("  Missing spread               " + numMissingSpread);
-            Console.WriteLine("  Missing total points         " + numMissingTotal);
-            Console.WriteLine("  Missing favorite             " + numMissingFavorite);
-            Console.WriteLine("  Tied game                    " + numTiedGames);
-            Console.WriteLine("  Same game listed twice       " + numDuplicateGames);
-            Console.WriteLine();
-            Console.WriteLine("  Total removed:           " + numRemoved.ToString("N0"));
-            Console.WriteLine("  Games kept (clean):      " + goodLines.Count.ToString("N0"));
-            Console.WriteLine("  Saved to: " + cleanFilePath);
-            Console.WriteLine("==============================================\n");
+            say("==============================================");
+            say("  DATA CLEANING REPORT");
+            say("==============================================");
+            say("  Games in original file:  " + numRowsAtStart.ToString("N0"));
+            say("");
+            say("  Problem                      Rows removed");
+            say("  Empty line                   " + numBlankLines);
+            say("  Row too short                " + numShortRows);
+            say("  Missing final score          " + numMissingScore);
+            say("  Missing spread               " + numMissingSpread);
+            say("  Missing total points         " + numMissingTotal);
+            say("  Missing favorite             " + numMissingFavorite);
+            say("  Tied game                    " + numTiedGames);
+            say("  Same game listed twice       " + numDuplicateGames);
+            say("");
+            say("  Total removed:           " + numRemoved.ToString("N0"));
+            say("  Games kept (clean):      " + goodLines.Count.ToString("N0"));
+            say("  Saved to: " + cleanFilePath);
+            say("==============================================");
+            say("");
         }
 
         // Turns text into a number. Returns false if the text is empty or not a number.
@@ -147,7 +157,8 @@ namespace CodingBackProp
             for (int i = 0; i < headerNames.Length; ++i)
                 if (headerNames[i].Trim().ToLower() == wantedName)
                     return i;
-            throw new Exception("Column not found in CSV: " + wantedName);
+            throw new Exception("Column not found in CSV: " + wantedName +
+                ". Header found: " + string.Join(", ", headerNames));
         }
     }
 }
