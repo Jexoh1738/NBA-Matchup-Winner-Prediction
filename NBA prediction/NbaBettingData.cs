@@ -107,10 +107,10 @@ namespace NbaBetting
         /// <summary>Features grouped into the "factors" shown on the form.</summary>
         public static readonly string[] GroupNames = new string[]
         {
-            "Win rate (last 20 games)",
-            "Recent form (last 10)",
-            "Point margin (last 10)",
-            "Home court / road record",
+            "Win rate",
+            "Recent form",
+            "Point margin",
+            "Home court",
             "Rest days"
         };
 

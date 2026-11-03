@@ -29,6 +29,7 @@ namespace NbaBetting
 
         private readonly TabPage page;
         private readonly Mode mode;
+        private readonly bool randomTab;   // tab title contains "random": every click picks a random matchup
         private readonly Random rng = new Random();
 
         private ComboBox cboHome, cboAway;
@@ -54,13 +55,15 @@ namespace NbaBetting
             if (LimitToConference && title.Contains("east")) mode = Mode.East;
             else if (LimitToConference && title.Contains("west")) mode = Mode.West;
             else mode = Mode.All;
+            randomTab = title.Contains("random");
 
             DetectControls();
             if (cboHome == null || cboAway == null) return;
 
             cboHome.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAway.DropDownStyle = ComboBoxStyle.DropDownList;
-            if (btnPredict != null) btnPredict.Click += PredictClicked;
+            // On the Randomize tab the main button picks a random matchup; elsewhere it predicts the chosen teams.
+            if (btnPredict != null) btnPredict.Click += randomTab ? (EventHandler)RandomClicked : PredictClicked;
             if (btnRandom != null) btnRandom.Click += RandomClicked;
             ModelHolder.Changed += OnModelChanged;
             if (ModelHolder.Current != null) FillCombos();
@@ -100,6 +103,10 @@ namespace NbaBetting
                 c.Text.Trim().Equals("Predict", StringComparison.OrdinalIgnoreCase));
             btnRandom = all.FirstOrDefault(c => IsButtonLike(c) && !ReferenceEquals(c, btnPredict) &&
                 c.Text.IndexOf("random", StringComparison.OrdinalIgnoreCase) >= 0);
+
+            // Fallback: the tab's button has some other label - use the first button on the tab.
+            if (btnPredict == null && btnRandom == null)
+                btnPredict = all.FirstOrDefault(c => IsButtonLike(c));
 
             lblWinner = FindByName("lblPredictedWinner") ?? FirstText(all, t => t.StartsWith("Predicted Winner", StringComparison.OrdinalIgnoreCase));
 
