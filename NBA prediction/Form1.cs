@@ -39,6 +39,22 @@ namespace NBA_prediction
             string cleanCsv = Path.Combine(DataPaths.OutputFolder, "nba_clean.csv");
             NbaDataCleaner.CleanFile(originalCsv, cleanCsv);
 
+            TrainingPanel panel = new TrainingPanel();
+            panel.Dock = DockStyle.Fill;
+
+            TabControl tabs = FindTabControl(this);
+            if (tabs != null)
+            {
+                TabPage page = new TabPage("Training");
+                page.Controls.Add(panel);
+                tabs.TabPages.Add(page);
+                tabs.SelectedTab = page;
+            }
+            else
+            {
+                Controls.Add(panel);
+                panel.BringToFront();
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -77,6 +93,28 @@ namespace NBA_prediction
         }
 
         private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private static TabControl FindTabControl(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                TabControl t = c as TabControl;
+                if (t != null) return t;
+                TabControl inner = FindTabControl(c);
+                if (inner != null) return inner;
+            }
+            return null;
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

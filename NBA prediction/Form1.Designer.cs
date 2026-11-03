@@ -30,33 +30,16 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.label16 = new System.Windows.Forms.Label();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.label15 = new System.Windows.Forms.Label();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -66,18 +49,34 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblTeamB = new System.Windows.Forms.Label();
             this.button21 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.label14 = new System.Windows.Forms.Label();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.label15 = new System.Windows.Forms.Label();
-            this.progressBar4 = new System.Windows.Forms.ProgressBar();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lblTeamA = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblWinrate = new System.Windows.Forms.Label();
+            this.lblOddsValue = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblBarAway = new System.Windows.Forms.Label();
+            this.pbWinProb = new System.Windows.Forms.ProgressBar();
+            this.lblBarHome = new System.Windows.Forms.Label();
+            this.lblPredictedWinner = new System.Windows.Forms.Label();
+            this.btnPredict = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboAway = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboHome = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -124,6 +123,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -208,7 +208,7 @@
             this.tabPage1.Controls.Add(this.button18);
             this.tabPage1.Controls.Add(this.button19);
             this.tabPage1.Controls.Add(this.button20);
-            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.lblTeamB);
             this.tabPage1.Controls.Add(this.button21);
             this.tabPage1.Controls.Add(this.button10);
             this.tabPage1.Controls.Add(this.button11);
@@ -219,22 +219,22 @@
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.lblTeamA);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.lblWinrate);
+            this.tabPage1.Controls.Add(this.lblOddsValue);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.progressBar1);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.lblBarAway);
+            this.tabPage1.Controls.Add(this.pbWinProb);
+            this.tabPage1.Controls.Add(this.lblBarHome);
+            this.tabPage1.Controls.Add(this.lblPredictedWinner);
+            this.tabPage1.Controls.Add(this.btnPredict);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.cboAway);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.cboHome);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -244,373 +244,90 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // label1
+            // label19
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Home Team";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(503, 470);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(15, 13);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "%";
             // 
-            // comboBox1
+            // label18
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Atlanta Hawks",
-            "Boston Celtics",
-            "Brooklyn Nets",
-            "Charlotte Hornets",
-            "Chicago Bulls",
-            "Cleveland Cavaliers",
-            "Detroit Pistons",
-            "Indiana Pacers",
-            "Miami Heat",
-            "Milwaukee Bucks",
-            "New York Knicks",
-            "Orlando Magic",
-            "Philadelphia 76ers",
-            "Toronto Raptors",
-            "Washington Wizards"});
-            this.comboBox1.Location = new System.Drawing.Point(35, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(503, 446);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(15, 13);
+            this.label18.TabIndex = 45;
+            this.label18.Text = "%";
             // 
-            // tabPage2
+            // label17
             // 
-            this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.progressBar5);
-            this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.progressBar6);
-            this.tabPage2.Controls.Add(this.label24);
-            this.tabPage2.Controls.Add(this.progressBar7);
-            this.tabPage2.Controls.Add(this.label25);
-            this.tabPage2.Controls.Add(this.label26);
-            this.tabPage2.Controls.Add(this.button22);
-            this.tabPage2.Controls.Add(this.button23);
-            this.tabPage2.Controls.Add(this.button24);
-            this.tabPage2.Controls.Add(this.button25);
-            this.tabPage2.Controls.Add(this.button26);
-            this.tabPage2.Controls.Add(this.button27);
-            this.tabPage2.Controls.Add(this.button28);
-            this.tabPage2.Controls.Add(this.button29);
-            this.tabPage2.Controls.Add(this.button30);
-            this.tabPage2.Controls.Add(this.label27);
-            this.tabPage2.Controls.Add(this.button31);
-            this.tabPage2.Controls.Add(this.button32);
-            this.tabPage2.Controls.Add(this.button33);
-            this.tabPage2.Controls.Add(this.button34);
-            this.tabPage2.Controls.Add(this.button35);
-            this.tabPage2.Controls.Add(this.button36);
-            this.tabPage2.Controls.Add(this.button37);
-            this.tabPage2.Controls.Add(this.button38);
-            this.tabPage2.Controls.Add(this.button39);
-            this.tabPage2.Controls.Add(this.button40);
-            this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.button41);
-            this.tabPage2.Controls.Add(this.label29);
-            this.tabPage2.Controls.Add(this.label30);
-            this.tabPage2.Controls.Add(this.label31);
-            this.tabPage2.Controls.Add(this.label32);
-            this.tabPage2.Controls.Add(this.label33);
-            this.tabPage2.Controls.Add(this.label34);
-            this.tabPage2.Controls.Add(this.progressBar8);
-            this.tabPage2.Controls.Add(this.label35);
-            this.tabPage2.Controls.Add(this.label36);
-            this.tabPage2.Controls.Add(this.button42);
-            this.tabPage2.Controls.Add(this.label37);
-            this.tabPage2.Controls.Add(this.comboBox3);
-            this.tabPage2.Controls.Add(this.label38);
-            this.tabPage2.Controls.Add(this.comboBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(793, 527);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Western";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(503, 422);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(15, 13);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "%";
             // 
-            // tabPage3
+            // progressBar4
             // 
-            this.tabPage3.Controls.Add(this.label39);
-            this.tabPage3.Controls.Add(this.label40);
-            this.tabPage3.Controls.Add(this.label41);
-            this.tabPage3.Controls.Add(this.progressBar9);
-            this.tabPage3.Controls.Add(this.label42);
-            this.tabPage3.Controls.Add(this.progressBar10);
-            this.tabPage3.Controls.Add(this.label43);
-            this.tabPage3.Controls.Add(this.progressBar11);
-            this.tabPage3.Controls.Add(this.label44);
-            this.tabPage3.Controls.Add(this.label45);
-            this.tabPage3.Controls.Add(this.button43);
-            this.tabPage3.Controls.Add(this.button44);
-            this.tabPage3.Controls.Add(this.button45);
-            this.tabPage3.Controls.Add(this.button46);
-            this.tabPage3.Controls.Add(this.button47);
-            this.tabPage3.Controls.Add(this.button48);
-            this.tabPage3.Controls.Add(this.button49);
-            this.tabPage3.Controls.Add(this.button50);
-            this.tabPage3.Controls.Add(this.button51);
-            this.tabPage3.Controls.Add(this.label46);
-            this.tabPage3.Controls.Add(this.button52);
-            this.tabPage3.Controls.Add(this.button53);
-            this.tabPage3.Controls.Add(this.button54);
-            this.tabPage3.Controls.Add(this.button55);
-            this.tabPage3.Controls.Add(this.button56);
-            this.tabPage3.Controls.Add(this.button57);
-            this.tabPage3.Controls.Add(this.button58);
-            this.tabPage3.Controls.Add(this.button59);
-            this.tabPage3.Controls.Add(this.button60);
-            this.tabPage3.Controls.Add(this.button61);
-            this.tabPage3.Controls.Add(this.label47);
-            this.tabPage3.Controls.Add(this.button62);
-            this.tabPage3.Controls.Add(this.label48);
-            this.tabPage3.Controls.Add(this.label49);
-            this.tabPage3.Controls.Add(this.label50);
-            this.tabPage3.Controls.Add(this.label51);
-            this.tabPage3.Controls.Add(this.label52);
-            this.tabPage3.Controls.Add(this.label53);
-            this.tabPage3.Controls.Add(this.progressBar12);
-            this.tabPage3.Controls.Add(this.label54);
-            this.tabPage3.Controls.Add(this.label55);
-            this.tabPage3.Controls.Add(this.button63);
-            this.tabPage3.Controls.Add(this.label56);
-            this.tabPage3.Controls.Add(this.comboBox5);
-            this.tabPage3.Controls.Add(this.label57);
-            this.tabPage3.Controls.Add(this.comboBox6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(793, 527);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Randomize";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.progressBar4.Location = new System.Drawing.Point(107, 469);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(390, 18);
+            this.progressBar4.TabIndex = 43;
             // 
-            // label2
+            // label16
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Away Team";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(36, 470);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 13);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "Factor 3";
             // 
-            // comboBox2
+            // progressBar3
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Atlanta Hawks",
-            "Boston Celtics",
-            "Brooklyn Nets",
-            "Charlotte Hornets",
-            "Chicago Bulls",
-            "Cleveland Cavaliers",
-            "Detroit Pistons",
-            "Indiana Pacers",
-            "Miami Heat",
-            "Milwaukee Bucks",
-            "New York Knicks",
-            "Orlando Magic",
-            "Philadelphia 76ers",
-            "Toronto Raptors",
-            "Washington Wizards"});
-            this.comboBox2.Location = new System.Drawing.Point(265, 52);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.progressBar3.Location = new System.Drawing.Point(107, 445);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(390, 18);
+            this.progressBar3.TabIndex = 41;
             // 
-            // button1
+            // label15
             // 
-            this.button1.Location = new System.Drawing.Point(531, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Predict";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(36, 446);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(46, 13);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Factor 2";
             // 
-            // label3
+            // progressBar2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Predicted Winner";
+            this.progressBar2.Location = new System.Drawing.Point(107, 421);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(390, 18);
+            this.progressBar2.TabIndex = 39;
+            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
             // 
-            // label4
+            // label14
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 143);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Home Team";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(36, 422);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 13);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Factor 1";
             // 
-            // progressBar1
+            // label13
             // 
-            this.progressBar1.Location = new System.Drawing.Point(117, 133);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(390, 42);
-            this.progressBar1.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(528, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Away Team";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 206);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Network Odds";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(359, 206);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Home court";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 237);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Home Team / Away Team";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(359, 237);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "WinRate";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 285);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(162, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Last 10 games (oldest to newest)";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(90, 314);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "W";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(35, 319);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Team A";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(130, 314);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "W";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(208, 314);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "W";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(168, 314);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(34, 23);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "W";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(365, 314);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(34, 23);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "W";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(325, 314);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(34, 23);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "W";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(287, 314);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(34, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "W";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(247, 314);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(34, 23);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "W";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(443, 314);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(34, 23);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "W";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(403, 314);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(34, 23);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "W";
-            this.button11.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(35, 393);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(268, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "How accurate is the network? (factors to take account)";
             // 
             // button12
             // 
@@ -693,14 +410,14 @@
             this.button20.Text = "W";
             this.button20.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // lblTeamB
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(35, 348);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Team B";
+            this.lblTeamB.AutoSize = true;
+            this.lblTeamB.Location = new System.Drawing.Point(35, 348);
+            this.lblTeamB.Name = "lblTeamB";
+            this.lblTeamB.Size = new System.Drawing.Size(44, 13);
+            this.lblTeamB.TabIndex = 27;
+            this.lblTeamB.Text = "Team B";
             // 
             // button21
             // 
@@ -711,90 +428,319 @@
             this.button21.Text = "W";
             this.button21.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // button10
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 393);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(268, 13);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "How accurate is the network? (factors to take account)";
+            this.button10.Location = new System.Drawing.Point(443, 314);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(34, 23);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "W";
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // progressBar2
+            // button11
             // 
-            this.progressBar2.Location = new System.Drawing.Point(107, 421);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(390, 18);
-            this.progressBar2.TabIndex = 39;
-            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
+            this.button11.Location = new System.Drawing.Point(403, 314);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(34, 23);
+            this.button11.TabIndex = 24;
+            this.button11.Text = "W";
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // button6
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(36, 422);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 13);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Factor 1";
+            this.button6.Location = new System.Drawing.Point(365, 314);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(34, 23);
+            this.button6.TabIndex = 23;
+            this.button6.Text = "W";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // progressBar3
+            // button7
             // 
-            this.progressBar3.Location = new System.Drawing.Point(107, 445);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(390, 18);
-            this.progressBar3.TabIndex = 41;
+            this.button7.Location = new System.Drawing.Point(325, 314);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(34, 23);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "W";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // button8
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(36, 446);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(46, 13);
-            this.label15.TabIndex = 40;
-            this.label15.Text = "Factor 2";
+            this.button8.Location = new System.Drawing.Point(287, 314);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(34, 23);
+            this.button8.TabIndex = 21;
+            this.button8.Text = "W";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // progressBar4
+            // button9
             // 
-            this.progressBar4.Location = new System.Drawing.Point(107, 469);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(390, 18);
-            this.progressBar4.TabIndex = 43;
+            this.button9.Location = new System.Drawing.Point(247, 314);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(34, 23);
+            this.button9.TabIndex = 20;
+            this.button9.Text = "W";
+            this.button9.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // button4
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(36, 470);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 13);
-            this.label16.TabIndex = 42;
-            this.label16.Text = "Factor 3";
+            this.button4.Location = new System.Drawing.Point(208, 314);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(34, 23);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "W";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // button5
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(503, 422);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(15, 13);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "%";
+            this.button5.Location = new System.Drawing.Point(168, 314);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(34, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "W";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // button3
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(503, 446);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(15, 13);
-            this.label18.TabIndex = 45;
-            this.label18.Text = "%";
+            this.button3.Location = new System.Drawing.Point(130, 314);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 23);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "W";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label19
+            // lblTeamA
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(503, 470);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(15, 13);
-            this.label19.TabIndex = 46;
-            this.label19.Text = "%";
+            this.lblTeamA.AutoSize = true;
+            this.lblTeamA.Location = new System.Drawing.Point(35, 319);
+            this.lblTeamA.Name = "lblTeamA";
+            this.lblTeamA.Size = new System.Drawing.Size(44, 13);
+            this.lblTeamA.TabIndex = 16;
+            this.lblTeamA.Text = "Team A";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(90, 314);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "W";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(35, 285);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(162, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Last 10 games (oldest to newest)";
+            // 
+            // lblWinrate
+            // 
+            this.lblWinrate.AutoSize = true;
+            this.lblWinrate.Location = new System.Drawing.Point(359, 237);
+            this.lblWinrate.Name = "lblWinrate";
+            this.lblWinrate.Size = new System.Drawing.Size(49, 13);
+            this.lblWinrate.TabIndex = 13;
+            this.lblWinrate.Text = "WinRate";
+            // 
+            // lblOddsValue
+            // 
+            this.lblOddsValue.AutoSize = true;
+            this.lblOddsValue.Location = new System.Drawing.Point(35, 237);
+            this.lblOddsValue.Name = "lblOddsValue";
+            this.lblOddsValue.Size = new System.Drawing.Size(132, 13);
+            this.lblOddsValue.TabIndex = 12;
+            this.lblOddsValue.Text = "Home Team / Away Team";
+            this.lblOddsValue.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(359, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Home court";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 206);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Network Odds";
+            // 
+            // lblBarAway
+            // 
+            this.lblBarAway.AutoSize = true;
+            this.lblBarAway.Location = new System.Drawing.Point(528, 143);
+            this.lblBarAway.Name = "lblBarAway";
+            this.lblBarAway.Size = new System.Drawing.Size(63, 13);
+            this.lblBarAway.TabIndex = 9;
+            this.lblBarAway.Text = "Away Team";
+            this.lblBarAway.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // pbWinProb
+            // 
+            this.pbWinProb.Location = new System.Drawing.Point(117, 133);
+            this.pbWinProb.Name = "pbWinProb";
+            this.pbWinProb.Size = new System.Drawing.Size(390, 42);
+            this.pbWinProb.TabIndex = 8;
+            this.pbWinProb.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // lblBarHome
+            // 
+            this.lblBarHome.AutoSize = true;
+            this.lblBarHome.Location = new System.Drawing.Point(35, 143);
+            this.lblBarHome.Name = "lblBarHome";
+            this.lblBarHome.Size = new System.Drawing.Size(65, 13);
+            this.lblBarHome.TabIndex = 7;
+            this.lblBarHome.Text = "Home Team";
+            // 
+            // lblPredictedWinner
+            // 
+            this.lblPredictedWinner.AutoSize = true;
+            this.lblPredictedWinner.Location = new System.Drawing.Point(35, 98);
+            this.lblPredictedWinner.Name = "lblPredictedWinner";
+            this.lblPredictedWinner.Size = new System.Drawing.Size(89, 13);
+            this.lblPredictedWinner.TabIndex = 6;
+            this.lblPredictedWinner.Text = "Predicted Winner";
+            // 
+            // btnPredict
+            // 
+            this.btnPredict.Location = new System.Drawing.Point(531, 50);
+            this.btnPredict.Name = "btnPredict";
+            this.btnPredict.Size = new System.Drawing.Size(75, 23);
+            this.btnPredict.TabIndex = 4;
+            this.btnPredict.Text = "Predict";
+            this.btnPredict.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(265, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Away Team";
+            // 
+            // cboAway
+            // 
+            this.cboAway.FormattingEnabled = true;
+            this.cboAway.Items.AddRange(new object[] {
+            "Atlanta Hawks",
+            "Boston Celtics",
+            "Brooklyn Nets",
+            "Charlotte Hornets",
+            "Chicago Bulls",
+            "Cleveland Cavaliers",
+            "Detroit Pistons",
+            "Indiana Pacers",
+            "Miami Heat",
+            "Milwaukee Bucks",
+            "New York Knicks",
+            "Orlando Magic",
+            "Philadelphia 76ers",
+            "Toronto Raptors",
+            "Washington Wizards"});
+            this.cboAway.Location = new System.Drawing.Point(265, 52);
+            this.cboAway.Name = "cboAway";
+            this.cboAway.Size = new System.Drawing.Size(121, 21);
+            this.cboAway.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Home Team";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cboHome
+            // 
+            this.cboHome.FormattingEnabled = true;
+            this.cboHome.Items.AddRange(new object[] {
+            "Atlanta Hawks",
+            "Boston Celtics",
+            "Brooklyn Nets",
+            "Charlotte Hornets",
+            "Chicago Bulls",
+            "Cleveland Cavaliers",
+            "Detroit Pistons",
+            "Indiana Pacers",
+            "Miami Heat",
+            "Milwaukee Bucks",
+            "New York Knicks",
+            "Orlando Magic",
+            "Philadelphia 76ers",
+            "Toronto Raptors",
+            "Washington Wizards"});
+            this.cboHome.Location = new System.Drawing.Point(35, 52);
+            this.cboHome.Name = "cboHome";
+            this.cboHome.Size = new System.Drawing.Size(121, 21);
+            this.cboHome.TabIndex = 0;
+            this.cboHome.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.progressBar5);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.progressBar6);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.progressBar7);
+            this.tabPage2.Controls.Add(this.label25);
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.button22);
+            this.tabPage2.Controls.Add(this.button23);
+            this.tabPage2.Controls.Add(this.button24);
+            this.tabPage2.Controls.Add(this.button25);
+            this.tabPage2.Controls.Add(this.button26);
+            this.tabPage2.Controls.Add(this.button27);
+            this.tabPage2.Controls.Add(this.button28);
+            this.tabPage2.Controls.Add(this.button29);
+            this.tabPage2.Controls.Add(this.button30);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.button31);
+            this.tabPage2.Controls.Add(this.button32);
+            this.tabPage2.Controls.Add(this.button33);
+            this.tabPage2.Controls.Add(this.button34);
+            this.tabPage2.Controls.Add(this.button35);
+            this.tabPage2.Controls.Add(this.button36);
+            this.tabPage2.Controls.Add(this.button37);
+            this.tabPage2.Controls.Add(this.button38);
+            this.tabPage2.Controls.Add(this.button39);
+            this.tabPage2.Controls.Add(this.button40);
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.button41);
+            this.tabPage2.Controls.Add(this.label29);
+            this.tabPage2.Controls.Add(this.label30);
+            this.tabPage2.Controls.Add(this.label31);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.label33);
+            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.progressBar8);
+            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.label36);
+            this.tabPage2.Controls.Add(this.button42);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this.label38);
+            this.tabPage2.Controls.Add(this.comboBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(793, 527);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Western";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -1231,6 +1177,62 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 47;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label39);
+            this.tabPage3.Controls.Add(this.label40);
+            this.tabPage3.Controls.Add(this.label41);
+            this.tabPage3.Controls.Add(this.progressBar9);
+            this.tabPage3.Controls.Add(this.label42);
+            this.tabPage3.Controls.Add(this.progressBar10);
+            this.tabPage3.Controls.Add(this.label43);
+            this.tabPage3.Controls.Add(this.progressBar11);
+            this.tabPage3.Controls.Add(this.label44);
+            this.tabPage3.Controls.Add(this.label45);
+            this.tabPage3.Controls.Add(this.button43);
+            this.tabPage3.Controls.Add(this.button44);
+            this.tabPage3.Controls.Add(this.button45);
+            this.tabPage3.Controls.Add(this.button46);
+            this.tabPage3.Controls.Add(this.button47);
+            this.tabPage3.Controls.Add(this.button48);
+            this.tabPage3.Controls.Add(this.button49);
+            this.tabPage3.Controls.Add(this.button50);
+            this.tabPage3.Controls.Add(this.button51);
+            this.tabPage3.Controls.Add(this.label46);
+            this.tabPage3.Controls.Add(this.button52);
+            this.tabPage3.Controls.Add(this.button53);
+            this.tabPage3.Controls.Add(this.button54);
+            this.tabPage3.Controls.Add(this.button55);
+            this.tabPage3.Controls.Add(this.button56);
+            this.tabPage3.Controls.Add(this.button57);
+            this.tabPage3.Controls.Add(this.button58);
+            this.tabPage3.Controls.Add(this.button59);
+            this.tabPage3.Controls.Add(this.button60);
+            this.tabPage3.Controls.Add(this.button61);
+            this.tabPage3.Controls.Add(this.label47);
+            this.tabPage3.Controls.Add(this.button62);
+            this.tabPage3.Controls.Add(this.label48);
+            this.tabPage3.Controls.Add(this.label49);
+            this.tabPage3.Controls.Add(this.label50);
+            this.tabPage3.Controls.Add(this.label51);
+            this.tabPage3.Controls.Add(this.label52);
+            this.tabPage3.Controls.Add(this.label53);
+            this.tabPage3.Controls.Add(this.progressBar12);
+            this.tabPage3.Controls.Add(this.label54);
+            this.tabPage3.Controls.Add(this.label55);
+            this.tabPage3.Controls.Add(this.button63);
+            this.tabPage3.Controls.Add(this.label56);
+            this.tabPage3.Controls.Add(this.comboBox5);
+            this.tabPage3.Controls.Add(this.label57);
+            this.tabPage3.Controls.Add(this.comboBox6);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(793, 527);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Randomize";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label39
             // 
@@ -1724,16 +1726,16 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboHome;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPredict;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboAway;
+        private System.Windows.Forms.Label lblBarAway;
+        private System.Windows.Forms.ProgressBar pbWinProb;
+        private System.Windows.Forms.Label lblBarHome;
+        private System.Windows.Forms.Label lblPredictedWinner;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
@@ -1741,11 +1743,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblTeamA;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblWinrate;
+        private System.Windows.Forms.Label lblOddsValue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button10;
@@ -1759,7 +1761,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblTeamB;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label14;
