@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,22 @@ namespace NBA_prediction
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            NbaDataCleaner.CleanFile("C:\\Users\\allea\\source\\repos\\NBA prediction\\NBA prediction\\datasets\\nba_2008-2026.csv", "C:\\Users\\allea\\source\\repos\\NBA prediction\\NBA prediction\\datasets\\NBACLEAN.csv");
+            string originalCsv = DataPaths.FindFile("nba_2008-2026.csv");
+
+            // Fallback: if it isn't found, let the user pick the file
+            if (originalCsv == null)
+            {
+                using (OpenFileDialog dlg = new OpenFileDialog())
+                {
+                    dlg.Title = "Select nba_2008-2026.csv";
+                    dlg.Filter = "CSV files (*.csv)|*.csv";
+                    if (dlg.ShowDialog() != DialogResult.OK) return;
+                    originalCsv = dlg.FileName;
+                }
+            }
+
+            string cleanCsv = Path.Combine(DataPaths.OutputFolder, "nba_clean.csv");
+            NbaDataCleaner.CleanFile(originalCsv, cleanCsv);
 
         }
 
