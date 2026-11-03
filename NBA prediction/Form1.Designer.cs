@@ -63,7 +63,7 @@
             this.lblTeamA = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblWinrate = new System.Windows.Forms.Label();
+            this.lblWinRate = new System.Windows.Forms.Label();
             this.lblOddsValue = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -222,7 +222,7 @@
             this.tabPage1.Controls.Add(this.lblTeamA);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.lblWinrate);
+            this.tabPage1.Controls.Add(this.lblWinRate);
             this.tabPage1.Controls.Add(this.lblOddsValue);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
@@ -536,14 +536,14 @@
             this.label10.TabIndex = 14;
             this.label10.Text = "Last 10 games (oldest to newest)";
             // 
-            // lblWinrate
+            // lblWinRate
             // 
-            this.lblWinrate.AutoSize = true;
-            this.lblWinrate.Location = new System.Drawing.Point(359, 237);
-            this.lblWinrate.Name = "lblWinrate";
-            this.lblWinrate.Size = new System.Drawing.Size(49, 13);
-            this.lblWinrate.TabIndex = 13;
-            this.lblWinrate.Text = "WinRate";
+            this.lblWinRate.AutoSize = true;
+            this.lblWinRate.Location = new System.Drawing.Point(359, 237);
+            this.lblWinRate.Name = "lblWinRate";
+            this.lblWinRate.Size = new System.Drawing.Size(49, 13);
+            this.lblWinRate.TabIndex = 13;
+            this.lblWinRate.Text = "WinRate";
             // 
             // lblOddsValue
             // 
@@ -617,6 +617,7 @@
             this.btnPredict.TabIndex = 4;
             this.btnPredict.Text = "Predict";
             this.btnPredict.UseVisualStyleBackColor = true;
+            this.btnPredict.Click += new System.EventHandler(this.btnPredict_Click);
             // 
             // label2
             // 
@@ -650,6 +651,7 @@
             this.cboAway.Name = "cboAway";
             this.cboAway.Size = new System.Drawing.Size(121, 21);
             this.cboAway.TabIndex = 2;
+            this.cboAway.SelectedIndexChanged += new System.EventHandler(this.cboAway_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -1746,7 +1748,7 @@
         private System.Windows.Forms.Label lblTeamA;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblWinrate;
+        private System.Windows.Forms.Label lblWinRate;
         private System.Windows.Forms.Label lblOddsValue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

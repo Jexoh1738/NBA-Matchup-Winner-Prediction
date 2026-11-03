@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace CodingBackProp
+namespace NBA_prediction
 {
     /// <summary>
     /// Finds a data file without any hard-coded path, so the project runs on any machine.

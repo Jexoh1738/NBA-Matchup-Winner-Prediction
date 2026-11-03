@@ -55,6 +55,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.Predict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatchPredictor.cs" />
     <Compile Include="NbaBettingData.cs" />
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Program.cs" />

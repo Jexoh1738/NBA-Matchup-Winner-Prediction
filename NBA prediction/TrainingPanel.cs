@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NbaBetting;
 
-namespace CodingBackProp
+namespace NBA_prediction
 {
     /// <summary>
     /// A ready-made panel (built entirely in code, no designer needed) that:

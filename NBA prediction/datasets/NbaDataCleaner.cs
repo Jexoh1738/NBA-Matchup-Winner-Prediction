@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace CodingBackProp
+namespace NBA_prediction
 {
     public static class NbaDataCleaner
     {

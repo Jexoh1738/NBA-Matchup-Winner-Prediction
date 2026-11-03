@@ -1,4 +1,4 @@
-﻿using CodingBackProp;
+﻿using NBA_prediction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +17,8 @@ namespace NBA_prediction
         public Form1()
         {
             InitializeComponent();
+            InitPredictTab();
+            AddTrainingTab();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,22 +41,8 @@ namespace NBA_prediction
             string cleanCsv = Path.Combine(DataPaths.OutputFolder, "nba_clean.csv");
             NbaDataCleaner.CleanFile(originalCsv, cleanCsv);
 
-            TrainingPanel panel = new TrainingPanel();
-            panel.Dock = DockStyle.Fill;
-
-            TabControl tabs = FindTabControl(this);
-            if (tabs != null)
-            {
-                TabPage page = new TabPage("Training");
-                page.Controls.Add(panel);
-                tabs.TabPages.Add(page);
-                tabs.SelectedTab = page;
-            }
-            else
-            {
-                Controls.Add(panel);
-                panel.BringToFront();
-            }
+            InitPredictTab();
+            AddTrainingTab();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -115,6 +103,16 @@ namespace NBA_prediction
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboAway_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPredict_Click(object sender, EventArgs e)
         {
 
         }
