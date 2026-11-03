@@ -8,6 +8,14 @@ using NbaBetting;
 
 namespace CodingBackProp
 {
+    /// <summary>
+    /// A ready-made panel (built entirely in code, no designer needed) that:
+    ///   1. finds nba_2008-2026.csv automatically (or lets the user browse for it)
+    ///   2. cleans the data
+    ///   3. runs the grid search + final training on a background thread (UI never freezes)
+    ///   4. shows the live log, a progress bar and the final test report
+    /// Files written next to the program: nba_clean.csv, experiments.csv, training_log.csv
+    /// </summary>
     public class TrainingPanel : UserControl
     {
         private const string CsvFileName = "nba_2008-2026.csv";
@@ -132,6 +140,22 @@ namespace CodingBackProp
             Process.Start("explorer.exe", DataPaths.OutputFolder);
         }
 
+        /// <summary>
+        /// Starts cleaning + training automatically (same as pressing the button).
+        /// Called once when the main form has been shown. Does nothing if the CSV can't be found
+        /// or training is already running.
+        /// </summary>
+        public void StartTraining()
+        {
+            if (string.IsNullOrEmpty(txtCsv.Text))
+            {
+                string found = DataPaths.FindFile(CsvFileName);
+                if (found != null) txtCsv.Text = found;
+            }
+            if (btnRun.Enabled && File.Exists(txtCsv.Text))
+                btnRun_Click(this, EventArgs.Empty);
+        }
+
         private async void btnRun_Click(object sender, EventArgs e)
         {
             string originalCsv = txtCsv.Text;
@@ -145,6 +169,10 @@ namespace CodingBackProp
             string outDir = DataPaths.OutputFolder;
             string cleanCsv = Path.Combine(outDir, "nba_clean.csv");
 
+            // If this tab was never opened, make sure the control has a window handle
+            // so the background thread can safely report progress to it.
+            if (!IsHandleCreated) { IntPtr forceCreate = Handle; }
+
             btnRun.Enabled = false;
             btnBrowse.Enabled = false;
             txtLog.Clear();
@@ -154,12 +182,14 @@ namespace CodingBackProp
             try
             {
                 // Everything inside Task.Run happens on a background thread
+                MatchPredictor model = null;
                 await Task.Run(() =>
                 {
                     NbaDataCleaner.CleanFile(originalCsv, cleanCsv, Log);
-                    BettingExperiment.Run(cleanCsv, outDir, Log, SetProgress);
+                    model = BettingExperiment.Run(cleanCsv, outDir, Log, SetProgress);
                 });
-                SetStatus("Done. Files saved in: " + outDir);
+                ModelHolder.Set(model);   // hands the trained network to the Predict button
+                SetStatus("Done. The network is ready - use Predict on the Eastern tab. Files saved in: " + outDir);
             }
             catch (Exception ex)
             {
@@ -173,6 +203,7 @@ namespace CodingBackProp
             }
         }
 
+        // ---- thread-safe helpers: safe to call from the background thread ----
 
         private void Log(string line)
         {

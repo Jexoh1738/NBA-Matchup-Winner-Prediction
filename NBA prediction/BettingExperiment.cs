@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace NbaBetting
 {
+    /// <summary>Accuracy, confusion matrix, precision/recall and baseline comparison.</summary>
     public static class Evaluation
     {
         public static double Accuracy(NeuralNetwork net, Dataset d)
@@ -51,22 +54,28 @@ namespace NbaBetting
             log(string.Format("Baseline: always pick the favorite : {0:P2}", (double)favWins / d.Count));
             log(acc > (double)favWins / d.Count
                 ? "Result: the network beats the bookmaker's favorite."
-                : "Result: the network does NOT beat the bookmaker's favorite (it mostly reproduces the line).");
+                : "Result: the network does not beat the bookmaker's favorite (it only sees team form, not the betting line).");
         }
     }
 
+    /// <summary>
+    /// Runs the whole experiment: load -> grid search on VALIDATION data -> retrain best
+    /// settings -> report on the untouched TEST data -> measure factor importance.
+    /// Writes experiments.csv and training_log.csv and returns a MatchPredictor for the form.
+    /// </summary>
     public static class BettingExperiment
     {
-        public static void Run(string csvPath, string outDir, Action<string> log)
+        public static MatchPredictor Run(string csvPath, string outDir, Action<string> log)
         {
-            Run(csvPath, outDir, log, null);
+            return Run(csvPath, outDir, log, null);
         }
 
-        public static void Run(string csvPath, string outDir, Action<string> log, Action<int> progress)
+        /// <summary>Same as above, but also reports progress as a percentage (0-100).</summary>
+        public static MatchPredictor Run(string csvPath, string outDir, Action<string> log, Action<int> progress)
         {
             Directory.CreateDirectory(outDir);
-            Dataset train, val, test;
-            NbaBettingData.Load(csvPath, 0.70, 0.15, out train, out val, out test, log);
+            LoadedData data = NbaBettingData.Load(csvPath, 0.70, 0.15, log);
+            Dataset train = data.Train, val = data.Val, test = data.Test;
             if (progress != null) progress(5);
 
             int inputs = NbaBettingData.FeatureNames.Length;
@@ -113,7 +122,61 @@ namespace NbaBetting
             }
 
             Evaluation.Report(finalNet, test, log);
+            double testAcc = Evaluation.Accuracy(finalNet, test);
+
+            List<FactorShare> factors = FactorImportance(finalNet, val);
+            log("");
+            log("Factors the network relies on (permutation importance on validation data):");
+            foreach (FactorShare f in factors)
+                log(string.Format("  {0,-28} {1,5:F1} %", f.Name, f.Percent));
+
             if (progress != null) progress(100);
+            return new MatchPredictor(finalNet, data.Min, data.Max, data.Teams, factors, testAcc);
+        }
+
+        /// <summary>
+        /// For each group of inputs: shuffle that group across the validation games and see how
+        /// much accuracy drops. A bigger drop = the network leans on that factor more.
+        /// Results are scaled to add up to 100%.
+        /// </summary>
+        private static List<FactorShare> FactorImportance(NeuralNetwork net, Dataset d)
+        {
+            Random rng = new Random(123);
+            double baseAcc = Evaluation.Accuracy(net, d);
+            int groups = NbaBettingData.GroupNames.Length;
+            double[] drop = new double[groups];
+            const int repeats = 3;
+            int n = d.Count;
+
+            for (int g = 0; g < groups; g++)
+            {
+                double sum = 0;
+                for (int rep = 0; rep < repeats; rep++)
+                {
+                    int[] perm = Enumerable.Range(0, n).OrderBy(i => rng.Next()).ToArray();
+                    int correct = 0;
+                    for (int i = 0; i < n; i++)
+                    {
+                        double[] x = (double[])d.X[i].Clone();
+                        foreach (int idx in NbaBettingData.GroupIndexes[g])
+                            x[idx] = d.X[perm[i]][idx];
+                        if (net.PredictClass(x) == d.Label[i]) correct++;
+                    }
+                    sum += baseAcc - (double)correct / n;
+                }
+                drop[g] = Math.Max(0, sum / repeats);
+            }
+
+            double total = drop.Sum();
+            List<FactorShare> result = new List<FactorShare>();
+            for (int g = 0; g < groups; g++)
+            {
+                FactorShare f = new FactorShare();
+                f.Name = NbaBettingData.GroupNames[g];
+                f.Percent = total < 1e-9 ? 100.0 / groups : drop[g] / total * 100.0;
+                result.Add(f);
+            }
+            return result.OrderByDescending(f => f.Percent).ToList();
         }
     }
 }
