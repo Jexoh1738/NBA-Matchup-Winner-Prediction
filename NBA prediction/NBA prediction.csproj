@@ -80,7 +80,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="datasets\NBACLEAN.csv" />
     <None Include="datasets\nba_2008-2026.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

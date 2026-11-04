@@ -65,10 +65,6 @@ namespace NbaBetting
     /// </summary>
     public static class BettingExperiment
     {
-        public static MatchPredictor Run(string csvPath, string outDir, Action<string> log)
-        {
-            return Run(csvPath, outDir, log, null);
-        }
 
         /// <summary>Same as above, but also reports progress as a percentage (0-100).</summary>
         public static MatchPredictor Run(string csvPath, string outDir, Action<string> log, Action<int> progress)

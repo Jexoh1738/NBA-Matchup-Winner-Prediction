@@ -242,7 +242,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Eastern";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+
             // 
             // label19
             // 
@@ -309,7 +309,7 @@
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(390, 18);
             this.progressBar2.TabIndex = 39;
-            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
+
             // 
             // label14
             // 
@@ -553,7 +553,7 @@
             this.lblOddsValue.Size = new System.Drawing.Size(132, 13);
             this.lblOddsValue.TabIndex = 12;
             this.lblOddsValue.Text = "Home Team / Away Team";
-            this.lblOddsValue.Click += new System.EventHandler(this.label8_Click);
+
             // 
             // label7
             // 
@@ -581,7 +581,7 @@
             this.lblBarAway.Size = new System.Drawing.Size(63, 13);
             this.lblBarAway.TabIndex = 9;
             this.lblBarAway.Text = "Away Team";
-            this.lblBarAway.Click += new System.EventHandler(this.label5_Click);
+
             // 
             // pbWinProb
             // 
@@ -589,7 +589,7 @@
             this.pbWinProb.Name = "pbWinProb";
             this.pbWinProb.Size = new System.Drawing.Size(390, 42);
             this.pbWinProb.TabIndex = 8;
-            this.pbWinProb.Click += new System.EventHandler(this.progressBar1_Click);
+
             // 
             // lblBarHome
             // 
@@ -617,7 +617,7 @@
             this.btnPredict.TabIndex = 4;
             this.btnPredict.Text = "Predict";
             this.btnPredict.UseVisualStyleBackColor = true;
-            this.btnPredict.Click += new System.EventHandler(this.btnPredict_Click);
+
             // 
             // label2
             // 
@@ -651,7 +651,7 @@
             this.cboAway.Name = "cboAway";
             this.cboAway.Size = new System.Drawing.Size(121, 21);
             this.cboAway.TabIndex = 2;
-            this.cboAway.SelectedIndexChanged += new System.EventHandler(this.cboAway_SelectedIndexChanged);
+
             // 
             // label1
             // 
@@ -661,7 +661,7 @@
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Home Team";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // cboHome
             // 
@@ -686,7 +686,7 @@
             this.cboHome.Name = "cboHome";
             this.cboHome.Size = new System.Drawing.Size(121, 21);
             this.cboHome.TabIndex = 0;
-            this.cboHome.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+
             // 
             // tabPage2
             // 
@@ -1278,7 +1278,7 @@
             this.label42.Size = new System.Drawing.Size(46, 13);
             this.label42.TabIndex = 134;
             this.label42.Text = "Factor 3";
-            this.label42.Click += new System.EventHandler(this.label42_Click);
+
             // 
             // progressBar10
             // 
@@ -1711,7 +1711,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
