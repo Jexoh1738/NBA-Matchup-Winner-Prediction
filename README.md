@@ -70,7 +70,6 @@ Note that the betting lines (spread, total, moneyline) are **not** given to the 
 | File | What it is |
 |---|---|
 | `nba_2008-2026.csv` | Original data: about 24,440 games from the 2007–08 season through 2026 |
-| `NBACLEAN.csv` | A cleaned copy of the data |
 | `NbaDataCleaner.cs` | The code that does the cleaning |
 
 Each row is one game. Columns include `season`, `date`, `away`, `home`, final and quarter scores, `whos_favored`, `spread`, `total`, moneylines, and second-half lines. The network uses only `date`, `home`, `away`, `score_home`, `score_away`, and `whos_favored` (the last one is only for the baseline).
